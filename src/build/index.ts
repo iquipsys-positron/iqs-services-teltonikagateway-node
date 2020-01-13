@@ -1,0 +1,1 @@
+export { TeltonikaGatewayServiceFactory } from './TeltonikaGatewayServiceFactory';

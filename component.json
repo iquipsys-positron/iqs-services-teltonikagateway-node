@@ -1,0 +1,6 @@
+{
+  "name": "iqs-services-teltonikagateway-node",
+  "registry": "registry.gitlab.com/iqs-services",
+  "version": "1.0.0",
+  "build": 11
+}

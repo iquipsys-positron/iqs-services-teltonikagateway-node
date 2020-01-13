@@ -1,0 +1,39 @@
+---
+# Container descriptor
+- descriptor: "pip-services:context-info:default:default:1.0"
+  name: "iqs-services-teltonikagateway"
+  description: "Teltonika gateway microservice for iQuipsys Positron"
+
+# Console logger
+- descriptor: "pip-services:logger:console:default:1.0"
+  level: "trace"
+
+# Performance counters that posts values to log
+- descriptor: "pip-services:counters:log:default:1.0"
+  level: "trace"
+
+# Teltonika default connector
+- descriptor: "iqs-services-teltonikagateway:connector:default:default:1.0"
+  connection:
+    protocol: udp
+    host: "{{{TELTONIKA_SERVICE_HOST}}}"
+    port: "{{{TELTONIKA_SERVICE_PORT}}}"
+
+# Default controller
+- descriptor: "iqs-services-teltonikagateway:controller:default:default:1.0"
+
+# Common HTTP endpoint
+- descriptor: "pip-services:endpoint:http:default:1.0"
+  connection:
+    protocol: "http"
+    host: "0.0.0.0"
+    port: 8080
+
+# HTTP endpoint version 1.0
+- descriptor: "iqs-services-teltonikagateway:service:http:default:1.0"
+
+# Heartbeat service
+- descriptor: "pip-services:heartbeat-service:http:default:1.0"
+
+# Status service
+- descriptor: "pip-services:status-service:http:default:1.0"
